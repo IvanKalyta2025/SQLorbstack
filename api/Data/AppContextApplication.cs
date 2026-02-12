@@ -9,5 +9,8 @@ namespace api.Data
         : base(dbContextOptions)
         {
         }
+
+        public DbSet<BmwM90> BmwM90Ordinary { get; set; }
+
     }
 }
