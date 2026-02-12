@@ -14,7 +14,5 @@ namespace api.Models
 
         public string ManagerForCar { get; set; } = string.Empty;
 
-
-
     }
 }
