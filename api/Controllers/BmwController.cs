@@ -14,6 +14,12 @@ namespace api.Controllers
         {
             _appContextApplication = appContextApplication;
         }
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            var bmwdetailofmodel = _appContextApplication.BmwM90Ordinary.ToList();
+            return Ok(bmwdetailofmodel);
+        }
 
     }
 }
