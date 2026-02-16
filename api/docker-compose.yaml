@@ -1,0 +1,16 @@
+name: api_for_bmw
+services:
+  dbBank:
+    image: postgres:18
+    container_name: postgresBMWApp
+    environment:
+      POSTGRES_DB: BMW_ordinary
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: pass
+    ports:
+      - "5433:5433"
+    volumes:
+      - pgdata:/var/lib/postgresql
+
+volumes:
+  pgdata:
