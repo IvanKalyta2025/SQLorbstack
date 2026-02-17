@@ -1,5 +1,6 @@
 
 using api.Data;
+using api.Mappers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api.Controllers
@@ -17,7 +18,9 @@ namespace api.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            var bmwdetailofmodel = _appContextApplication.BmwM90Ordinary.ToList();
+            var bmwdetailofmodel = _appContextApplication.BmwM90Ordinary.ToList()
+            .Select(o => o.ToBmwDto());
+
             return Ok(bmwdetailofmodel);
         }
         [HttpGet("{id}")]
@@ -29,7 +32,7 @@ namespace api.Controllers
             {
                 return NotFound();
             }
-            return Ok(bmwdetailofmodel);
+            return Ok(bmwdetailofmodel.ToBmwDto());
         }
     }
 }
