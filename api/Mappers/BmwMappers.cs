@@ -14,7 +14,10 @@ namespace api.Mappers
         {
             return new BmwDto
             {
-
+                Id = bmwModel.Id,
+                ManagerForCar = bmwModel.ManagerForCar,
+                Serie = bmwModel.Serie,
+                Years = bmwModel.Years
             };
         }
 
