@@ -20,6 +20,16 @@ namespace api.Controllers
             var bmwdetailofmodel = _appContextApplication.BmwM90Ordinary.ToList();
             return Ok(bmwdetailofmodel);
         }
+        [HttpGet("{id}")]
 
+        public IActionResult GetById([FromRoute] int id)
+        {
+            var bmwdetailofmodel = _appContextApplication.BmwM90Ordinary.Find(id);
+            if (bmwdetailofmodel == null)
+            {
+                return NotFound();
+            }
+            return Ok(bmwdetailofmodel);
+        }
     }
 }
